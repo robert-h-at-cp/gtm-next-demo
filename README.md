@@ -131,7 +131,7 @@ export async function getServerSideProps() {
 
 2.b `pages/passage.js`
 
-```babel
+```jsx
 // ...
 
 export default function Passage(props) {
