@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -19,6 +20,8 @@ export default function Home() {
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.js</code>
+            <Link href="/passage">Go this page!</Link>
+            <Link href="/about-us">About Us</Link>
           </p>
           <div>
             <a
@@ -120,4 +123,14 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  // const res = await fetch(`https://.../data`)
+  // const data = await res.json()
+
+  // return { props: { data, dataLoaded: true } }
+  return { props: {
+    dataLayerPageType: 'homepage',
+  }}
 }
