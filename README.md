@@ -67,6 +67,9 @@ export default function GtmWrapper(props) {
     }
 
     window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(function() {
+      this.reset();
+    })
     window.dataLayer.push(tagManagerArgs);             // push the event into the GTM queue to trigger it
   }, [loadingSession, session, props.dataLayerPageType, props.dataLayerRest]);
 
