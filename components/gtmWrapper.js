@@ -17,6 +17,9 @@ export default function GtmWrapper(props) {
       tagManagerArgs.dataLayer.userId = session.user.id;
     }
     window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(function() {
+      this.reset();
+    })
     window.dataLayer.push(tagManagerArgs);
   }, [loadingSession, session, props.dataLayerPageType, props.dataLayerRest]);
 
